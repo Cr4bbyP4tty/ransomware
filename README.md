@@ -1,35 +1,35 @@
 # Ransomware
 
-[![Build Status](https://travis-ci.org/mauri870/ransomware.svg?branch=master)](https://travis-ci.org/mauri870/ransomware)
+[! [Status Pembuatan] (https://travis-ci.org/mauri870/ransomware.svg?branch=master)] (https://travis-ci.org/mauri870/ransomware)
 
-> Note: This project is purely academic, use at your own risk. I do not encourage in any way the use of this software illegally or to attack targets without their previous authorization
+> Catatan: Proyek ini murni bersifat akademis, gunakan dengan risiko Anda sendiri. Saya tidak menganjurkan dengan cara apa pun penggunaan perangkat lunak ini secara ilegal atau untuk menyerang target tanpa izin mereka sebelumnya
 
-**The intent here is to disseminate and teach more about security in the actual world. Remember, security is always a double-edged sword**
+** Maksudnya di sini adalah untuk menyebarluaskan dan mengajarkan lebih banyak tentang keamanan di dunia nyata. Ingat, keamanan selalu merupakan pedang bermata dua **
 
-### What is Ransomware?
-Ransomware is a type of malware that prevents or limits users from accessing their system, either by locking the system's screen or by locking the users' files unless a ransom is paid. More modern ransomware families, collectively categorized as crypto-ransomware, encrypt certain file types on infected systems and forces users to pay the ransom through certain online payment methods to get a decrypt key.
+### Apa itu Ransomware?
+Ransomware adalah jenis malware yang mencegah atau membatasi pengguna mengakses sistem mereka, baik dengan mengunci layar sistem atau dengan mengunci file pengguna kecuali tebusan dibayarkan. Lebih banyak keluarga ransomware modern, secara kolektif dikategorikan sebagai crypto-ransomware, mengenkripsi tipe file tertentu pada sistem yang terinfeksi dan memaksa pengguna untuk membayar uang tebusan melalui metode pembayaran online tertentu untuk mendapatkan kunci dekripsi.
 
-### Project Summary
-This project aims to build an almost functional crypto-ransomware for educational purposes, written in Go. Basically, it will encrypt your files in background using AES-256-CTR, a strong encryption algorithm, using RSA-4096 to secure the key exchange with server. Yeah, a Cryptolocker like malware.
+### Ringkasan proyek
+Proyek ini bertujuan untuk membangun crypto-ransomware yang hampir berfungsi untuk tujuan pendidikan, ditulis dalam Go. Pada dasarnya, itu akan mengenkripsi file Anda di latar belakang menggunakan AES-256-CTR, algoritma enkripsi yang kuat, menggunakan RSA-4096 untuk mengamankan pertukaran kunci dengan server. Ya, Cryptolocker menyukai malware.
 
-It is composed of two main parts, the server and the malware itself.
+Ini terdiri dari dua bagian utama, server dan malware itu sendiri.
 
-The server is responsible for store the Id and the respective encryption key and possibly act as a Command and Control server in the near future.
+Server bertanggung jawab untuk menyimpan Id dan kunci enkripsi masing-masing dan mungkin bertindak sebagai server Command and Control dalam waktu dekat.
 
-The malware encrypt with your RSA-4096 public key any payload before send then to the server. This approach with the https transport together make the security and authentication almost unbreakable (in theory)
+Malware mengenkripsi dengan kunci publik RSA-4096 Anda muatan apa pun sebelum mengirim lalu ke server. Pendekatan ini dengan transportasi https bersama-sama membuat keamanan dan otentikasi hampir tidak dapat dipecahkan (secara teori)
 
-### Project tasks
+### Tugas proyek
 
-- [x] Run in Background (or not)
-- [x] Encrypt files using AES-256-CTR(Counter Mode) with random IV for each file
-- [x] Without virus signature (at the moment)
-- [x] Use RSA-4096 to secure the authenticity
-- [x] HTTPS and HTTP\2 Transport by default
-- [x] Stream encryption to avoid load an entire file into memory
-- [x] Walk all drives by default, including usb's and network locations
-- [ ] Lock registry entry with hash digest(maybe SHA-256) to identify an infected victim
-- [ ] Tor or other approach to hide the connection with the C&C [see issue 3](https://github.com/mauri870/ransomware/issues/3)
-- [x] Docker image for compilation
+- [x] Jalankan di Latar Belakang (atau tidak)
+- [x] Enkripsi file menggunakan AES-256-CTR (Mode Penghitung) dengan IV acak untuk setiap file
+- [x] Tanpa tanda tangan virus (saat ini)
+- [x] Gunakan RSA-4096 untuk mengamankan keaslian
+- [x] HTTPS dan HTTP \ 2 Transport secara default
+- [x] Alirkan enkripsi untuk menghindari memuat seluruh file ke dalam memori
+- [x] Berjalan semua drive secara default, termasuk lokasi usb dan jaringan
+- [] Kunci entri registri dengan hash digest (mungkin SHA-256) untuk mengidentifikasi korban yang terinfeksi
+- [] Tor atau pendekatan lain untuk menyembunyikan koneksi dengan C&C [lihat edisi 3] (https://github.com/mauri870/ransomware/issues/3)
+- [x] Gambar Docker untuk dikompilasi
 
 ### Building the binaries
 
@@ -51,9 +51,9 @@ Done! The binaries live on the bin folder
 You need Go at least 1.7 with the `$GOPATH/bin` in your $PATH
 
 ```
-go get -v github.com/mauri870/ransomware
+go get -v github.com/Cr4bbyP4tty/ransomware
 go get -v github.com/akavel/rsrc
-cd $GOPATH/src/github.com/mauri870/ransomware
+cd $GOPATH/src/github.com/Cr4bbyP4tty/ransomware
 ```
 
 Build the project require a lot of steps, like the RSA key generation, build three binaries, embed manifest files, so, let's leave `make` do your job
